@@ -56,7 +56,7 @@
                              Margin="0, 0, 0, 10">
                     <Label Text="食品名"/>
                     <Entry Placeholder="【食品名】入力してください"
-                            x:Name="NemeEntry"
+                            x:Name="NameEntry"
                             IsEnabled="True"/>
                     <Label Text="※レシピの検索に使用します"
                             FontSize="14" />
