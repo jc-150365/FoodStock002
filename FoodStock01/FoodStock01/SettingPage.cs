@@ -17,7 +17,7 @@ namespace FoodStock01
            //アイコン
             Icon = "gear32.png";
 
-            //ラベルを生成
+            //ラベルを生成//
             var label1 = new Label
             {
                 FontSize = 40,
