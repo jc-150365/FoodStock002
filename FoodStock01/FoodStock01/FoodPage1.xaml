@@ -33,7 +33,7 @@
                 <Label Text="食材名" 
                        BackgroundColor="Transparent"
                        Grid.Column="0" Grid.Row="0"/>
-                <Label Text="消費期限・賞味期限" 
+                <Label Text="消費期限・賞味期限まで" 
                        BackgroundColor="Transparent"
                        Grid.Column="1" Grid.Row="0"/>
                 <Label Text="レシピ使用" 
@@ -44,7 +44,7 @@
             </Grid>
 
             <ListView HasUnevenRows="true"
-                  ItemsSource="{Binding Magics}">
+                  ItemsSource="{Binding Foods}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -58,7 +58,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding Name}" 
+                                <Label Text="{Binding F_name}" 
                                    Grid.Column="0" Grid.Row="0"
                                    FontSize="Large"/>
                                 <Grid Grid.Column="1" Grid.Row="0">
@@ -69,7 +69,7 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Date}" 
+                                    <Label Text="{Binding F_result}" 
                                        Grid.Column="0" Grid.Row="0"
                                        HorizontalOptions="End"
                                        FontSize="Large"/>

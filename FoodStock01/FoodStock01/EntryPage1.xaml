@@ -64,9 +64,10 @@
 
                 <StackLayout Margin="0, 0, 0, 10">
                     <Label Text="消費期限・賞味期限（食材のみ）"/>
-                    <DatePicker Format="D"
+                    <DatePicker Format="d"
                             x:Name="FoodPicker"
-                            IsEnabled="True"/>
+                            IsEnabled="True"
+                            DateSelected="FoodPicker_DateSelected" />
                 </StackLayout>
 
                     <Grid>
@@ -111,10 +112,14 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Text="登録"
-                    Grid.Column="0" Grid.Row="0" />
+                    Grid.Column="0" Grid.Row="0"
+                    x:Name="Insert01"
+                    Clicked="Insert01_Clicked"/>
 
                 <Button Text="続けて登録"
-                    Grid.Column="1" Grid.Row="0"/>
+                    Grid.Column="1" Grid.Row="0"
+                    x:Name="Insert02"
+                    Clicked="Insert02_Clicked"/>
             </Grid>
 
         </StackLayout>

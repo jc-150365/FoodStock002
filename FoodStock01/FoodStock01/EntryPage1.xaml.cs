@@ -41,5 +41,36 @@ namespace FoodStock01
                 FoodPicker.IsEnabled = true;
             }
         }
+
+        /***************「登録ボタン」が押された時*********************/
+        private void Insert01_Clicked(object sender, EventArgs e)
+        {
+            //Foodテーブルにインサートする
+            //FoodModel.InsertFood(1, NameEntry.Text, d);//
+            //DisplayAlert(NameEntry.Text, d.ToString(), "ok");
+
+            FoodModel.InsertFood(1, NameEntry.Text, result);//
+            DisplayAlert(NameEntry.Text, result.ToString(), "ok");
+
+            FoodModel.SelectFood();//ワンチャン
+        }
+
+        /***************「すべて削除ボタン」が押された時********************/
+        private void Insert02_Clicked(object sender, EventArgs e)
+        {
+            FoodModel.DeleteAllFood();
+        }
+
+        /*************フードピッカーで日付を選択したとき******************/
+        private void FoodPicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            //d = FoodPicker.Date;
+            d = new DateTime(FoodPicker.Date.Year, FoodPicker.Date.Month, FoodPicker.Date.Day);
+
+            s = d - now;
+
+            result = s.Days;
+
+        }
     }
 }
