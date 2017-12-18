@@ -31,7 +31,7 @@ namespace FoodStock01
                         S_num = stock.S_num,
                         S_unit = stock.S_unit
                     };
-                    Stocks.Add(f);
+                    Stocks.Add(s);
                 }
             }
             else
