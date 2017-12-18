@@ -36,7 +36,13 @@ namespace FoodStock01
             string name = ((CustomButton)sender).NameText;
             DisplayAlert("1足しました", name+"　"+num.ToString(), "ok");
 
+            /***ここから試し***/
             StockFoodModel.UpdateStockPlus();
+
+            Title = "保存";
+
+            InitializeComponent();
+            /***ここまで試し***/
         }
 
         //マイナスがクリックされた
