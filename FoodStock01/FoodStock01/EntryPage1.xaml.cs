@@ -68,12 +68,18 @@ namespace FoodStock01
             {
                 FoodModel.InsertFood(1, NameEntry.Text, result);//
                 DisplayAlert(NameEntry.Text, "あと" + result.ToString() + "日", "OK");
+
+                NameEntry.Text = "";
             }
             else//保存食品の登録だったら
             {
                 qty = int.Parse(NumEntry.Text);
                 StockFoodModel.InsertStock(1, NameEntry.Text, qty, UnitEntry.Text);
                 DisplayAlert(NameEntry.Text, qty.ToString() + UnitEntry.Text, "OK");
+
+                NameEntry.Text = "";
+                NumEntry.Text = "";
+                UnitEntry.Text = "";
             }
         }
 
