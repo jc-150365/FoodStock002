@@ -23,6 +23,8 @@ namespace FoodStock01
         FoodPage1 page;
 
         bool s_switch = false;//食材と保存どちらのインサートメソッドを呼び出すかのやつ
+
+        int qty = 0;
         /***ここまでフィールド***/
 
         public EntryPage1(string title)
