@@ -27,6 +27,7 @@ namespace FoodStock01
                 {
                     Stock s = new Stock
                     {
+                        S_no = stock.S_no,//試し
                         S_name = stock.S_name,
                         S_num = stock.S_num,
                         S_unit = stock.S_unit
@@ -51,6 +52,7 @@ namespace FoodStock01
 
     public class Stock
     {
+        public int S_no { get; set; }//試し
         public string S_name{ get; set; }
         public int S_num { get; set; }
         public string S_unit { get; set; }

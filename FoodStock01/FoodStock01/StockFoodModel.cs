@@ -105,15 +105,35 @@ namespace FoodStock01
             }
         }
 
-        /********************アップデートメソッド**************************************/
-        public static List<StockFoodModel> UpdateStock()
+        /********************アップデートメソッド（プラス）**************************************/
+        public static List<StockFoodModel> UpdateStockPlus(int s_no)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<StockFoodModel>("UPDATE [Stock] SET ");
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1 WHERE [S_no] = "+ s_no);
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
+        /********************アップデートメソッド（マイナス）**************************************/
+        public static List<StockFoodModel> UpdateStockMinus(int s_no)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースに指定したSQLを発行
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] - 1 WHERE [S_no] = " + s_no);
 
                 }
                 catch (Exception e)

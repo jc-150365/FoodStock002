@@ -35,6 +35,8 @@ namespace FoodStock01
             int num = Convert.ToInt32(((CustomButton)sender).CountText) + 1;
             string name = ((CustomButton)sender).NameText;
             DisplayAlert("1足しました", name+"　"+num.ToString(), "ok");
+
+            StockFoodModel.UpdateStockPlus(s_no);
         }
 
         //マイナスがクリックされた
