@@ -20,6 +20,13 @@
                     HorizontalOptions="End"
                     Clicked="OnSearch_Clicked"/>
 
+            <Button Text="更新"
+                    x:Name="Update_Button"
+                    Grid.Column="2" Grid.Row="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="Update_Button_Clicked"/>
+
             <Grid Padding="10,20,10,20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -77,13 +84,6 @@
                                        Grid.Column="1" Grid.Row="0"
                                        HorizontalOptions="Start"
                                        VerticalOptions="End"/>
-                                    <Button Text="更新"
-                                       x:Name="Update_Button"
-                                       Grid.Column="2" Grid.Row="0"
-                                       HorizontalOptions="End"
-                                       VerticalOptions="Center"
-                                       Clicked="Update_Button_Clicked"/>
-
 
                                     <!--<Button Text="{Binding Name}" 
                                         Grid.Column="2" Grid.Row="0" 
@@ -93,9 +93,9 @@
                                                   Grid.Column="2" Grid.Row="0"
                                                   HorizontalOptions="End"
                                                   VerticalOptions="Center"
-                                                  Text="{Binding Name}"
-                                                  />
+                                                  Text="{Binding Name}"/>
                                 </Grid>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
