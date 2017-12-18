@@ -51,7 +51,8 @@ namespace FoodStock01
  　      void OnSearch_Clicked(object sender, EventArgs args)
         {
             //ページ遷移
-            Navigation.PushAsync(new NextPage(s));
+            //Navigation.PushAsync(new NextPage(s));
+            DisplayAlert("url",s,"ok");
         }
 
         private void Update_Button_Clicked(object sender, EventArgs e)
