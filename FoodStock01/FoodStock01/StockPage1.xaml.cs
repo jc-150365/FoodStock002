@@ -20,6 +20,15 @@ namespace FoodStock01
             InitializeComponent ();
 		}
 
+        //更新ボタンが押された時
+        private void Update_Button_Clicked(object sender, EventArgs e)
+        {
+            Title = "保存";
+
+            InitializeComponent();
+
+        }
+
         //プラスがクリックされた
         void OnPlus_Clicked(object sender, EventArgs args)
         {
