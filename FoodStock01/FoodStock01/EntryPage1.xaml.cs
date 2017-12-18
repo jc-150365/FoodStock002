@@ -18,9 +18,9 @@ namespace FoodStock01
 
         DateTime now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);//現在日付
 
-        string calc;
-
         int result;
+
+        FoodPage1 page;
 
         /***ここまでフィールド***/
 
@@ -64,9 +64,7 @@ namespace FoodStock01
             FoodModel.InsertFood(1, NameEntry.Text, result);//
             DisplayAlert(NameEntry.Text, result.ToString(), "ok");
 
-            FoodNavi reload = new FoodNavi(new FoodPage1(食材リスト));
-
-            
+            page = new FoodPage1(1);//試し
         }
 
         /***************「すべて削除ボタン」が押された時********************/
