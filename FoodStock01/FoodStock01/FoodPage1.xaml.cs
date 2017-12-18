@@ -65,6 +65,5 @@ namespace FoodStock01
             //ページ遷移
             Navigation.PushAsync(new NextPage(s));
         }
-
     }
 }
