@@ -12,6 +12,7 @@ namespace FoodStock01
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EntryPage1 : ContentPage
     {
+        /***ここからフィールド***/
         DateTime d; //フードピッカーの値を一時的に保持する
         TimeSpan s; //後で使うかも
 
@@ -20,6 +21,8 @@ namespace FoodStock01
         string calc;
 
         int result;
+
+        /***ここまでフィールド***/
 
         public EntryPage1(string title)
         {
@@ -61,7 +64,9 @@ namespace FoodStock01
             FoodModel.InsertFood(1, NameEntry.Text, result);//
             DisplayAlert(NameEntry.Text, result.ToString(), "ok");
 
-            FoodNavi food = new FoodNavi(new FoodPage1("食材リスト"));
+            FoodNavi reload = new FoodNavi(new FoodPage1(食材リスト));
+
+            
         }
 
         /***************「すべて削除ボタン」が押された時********************/
