@@ -78,22 +78,24 @@
                                        HorizontalOptions="Start"
                                        VerticalOptions="End"/>
                                     <Button Text="更新"
+                                       x:Name="Update_Button"
                                        Grid.Column="2" Grid.Row="0"
                                        HorizontalOptions="End"
-                                       VerticalOptions="Center"/>
-                                </Grid>
+                                       VerticalOptions="Center"
+                                       Clicked="Update_Button_Clicked"/>
 
-                                <!--<Button Text="{Binding Name}" 
+
+                                    <!--<Button Text="{Binding Name}" 
                                         Grid.Column="2" Grid.Row="0" 
                                         Clicked="OnButtonClicked"/>-->
 
-                                <toolkit:CheckBox CheckedChanged="ChackBoxChanged" 
+                                    <toolkit:CheckBox CheckedChanged="ChackBoxChanged" 
                                                   Grid.Column="2" Grid.Row="0"
                                                   HorizontalOptions="End"
                                                   VerticalOptions="Center"
                                                   Text="{Binding Name}"
                                                   />
-                            </Grid>
+                                </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
