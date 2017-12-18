@@ -22,16 +22,6 @@ namespace FoodStock01
             InitializeComponent();
         }
 
-        /***試し***/
-        /*public FoodPage1(int insert)
-        {
-            if(insert == 1)
-            {
-                InitializeComponent();
-            }
-        }*/
-        /***試し***/
-
         void ChackBoxChanged(object sender, bool isChecked)
         {
             //選択された時の処理

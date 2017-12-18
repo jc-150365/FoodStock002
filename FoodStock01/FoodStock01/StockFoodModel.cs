@@ -15,47 +15,22 @@ namespace FoodStock01
 
         public string S_name { get; set; } //保存食材名
 
-        public int S_qty { get; set; } //数量
+        public int S_num { get; set; } //数量
 
-        public string F_limit { get; set; } //現在時刻との差（後で使うかも）
-
-        public TimeSpan F_span { get; set; } //現在日時との差（後で使うかも）
-
-        public int F_result { get; set; } //現在日時との差（後で使うかも）
-
-        /********************インサートメソッド*********************/
-        /*public static void InsertFood(int f_no, string f_name,DateTime f_date)
-        {
-            //データベースに接続する
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-                try
-                {
-                    //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
-                    db.Insert(new FoodModel() { F_no = f_no, F_name = f_name, F_date = f_date });
-                    db.Commit();
-                }
-                catch (Exception e)
-                {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
-        }*/
+        public string S_unit { get; set; } //単位
 
         /********************インサートメソッド**********************/
-        public static void InsertFood(int f_no, string f_name, int f_result)
+        public static void InsertStock(int s_no, string s_name, int s_num,string s_unit)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
-                    //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
+                    //データベースにStockテーブルを作成する
+                    db.CreateTable<StockFoodModel>();
 
-                    db.Insert(new FoodModel() { F_no = f_no, F_name = f_name, F_result = f_result });
+                    db.Insert(new StockFoodModel() { S_no = s_no, S_name = s_name, S_num = s_num, S_unit = s_unit });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -67,14 +42,14 @@ namespace FoodStock01
         }
 
         /*******************セレクトメソッド**************************************/
-        public static List<FoodModel> SelectFood()
+        public static List<StockFoodModel> SelectStock()
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<FoodModel>("SELECT * FROM [Food] ORDER BY [F_result]");
+                    return db.Query<StockFoodModel>("SELECT * FROM [Stock] ORDER BY [S_num]");
 
                 }
                 catch (Exception e)
@@ -87,7 +62,7 @@ namespace FoodStock01
         }
 
         /********************デリートメソッド*************************************/
-        public static void DeleteFood(int f_no)
+        public static void DeleteStock(int s_no)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -95,9 +70,9 @@ namespace FoodStock01
                 try
                 {
                     //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
+                    db.CreateTable<StockFoodModel>();
 
-                    db.Delete<FoodModel>(f_no);//デリートで渡す値は主キーじゃないといけない説
+                    db.Delete<StockFoodModel>(s_no);//デリートで渡す値は主キーじゃないといけない説
                     db.Commit();
                 }
                 catch (Exception e)
@@ -109,7 +84,7 @@ namespace FoodStock01
         }
 
         /********************オールデリートメソッド*************************************/
-        public static void DeleteAllFood()
+        public static void DeleteAllStock()
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -117,9 +92,9 @@ namespace FoodStock01
                 try
                 {
                     //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
+                    db.CreateTable<StockFoodModel>();
 
-                    db.DeleteAll<FoodModel>();//デリートで渡す値は主キーじゃないといけない説
+                    db.DeleteAll<StockFoodModel>();
                     db.Commit();
                 }
                 catch (Exception e)
@@ -131,14 +106,14 @@ namespace FoodStock01
         }
 
         /********************アップデートメソッド**************************************/
-        public static List<FoodModel> UpdateFood()
+        public static List<StockFoodModel> UpdateStock()
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<FoodModel>("UPDATE [Food] SET ");
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET ");
 
                 }
                 catch (Exception e)
