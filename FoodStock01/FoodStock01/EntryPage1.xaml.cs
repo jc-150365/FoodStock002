@@ -73,7 +73,7 @@ namespace FoodStock01
             {
                 qty = int.Parse(NumEntry.Text);
                 StockFoodModel.InsertStock(1, NameEntry.Text, qty, UnitEntry.Text);
-                DisplayAlert(NameEntry.Text, qty.ToString() + UnitEntry.ToString(), "OK");
+                DisplayAlert(NameEntry.Text, qty.ToString() + UnitEntry.Text, "OK");
             }
         }
 
