@@ -48,7 +48,7 @@ namespace FoodStock01
                 NumEntry.IsEnabled = true;
                 UnitEntry.IsEnabled = true;
 
-                s_switch = false;//保存食品用のインサートを使う
+                s_switch = true;//保存食品用のインサートを使う
             }
             //食材
             else
@@ -57,14 +57,14 @@ namespace FoodStock01
                 UnitEntry.IsEnabled = false;
                 FoodPicker.IsEnabled = true;
 
-                s_switch = true;//食材用のインサートを使う
+                s_switch = false;//食材用のインサートを使う
             }
         }
 
         /***************「登録ボタン」が押された時*********************/
         private void Insert01_Clicked(object sender, EventArgs e)
         {
-            if (s_switch)//食材の登録だったら
+            if (!s_switch)//食材の登録だったら
             {
                 FoodModel.InsertFood(1, NameEntry.Text, result);//
                 DisplayAlert(NameEntry.Text, "あと" + result.ToString() + "日", "OK");
