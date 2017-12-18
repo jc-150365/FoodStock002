@@ -23,7 +23,6 @@ namespace FoodStock01
         FoodPage1 page;
 
         bool s_switch = false;//食材と保存どちらのインサートメソッドを呼び出すかのやつ
-
         /***ここまでフィールド***/
 
         public EntryPage1(string title)
@@ -70,8 +69,9 @@ namespace FoodStock01
             }
             else//保存食品の登録だったら
             {
-                StockFoodModel.InsertStock(1, NameEntry.Text, NumEntry, UnitEntry.Text);
-                DisplayAlert(NameEntry.Text, NumEntry.ToString() + UnitEntry.ToString(), "OK");
+                qty = int.Parse(NumEntry.Text);
+                StockFoodModel.InsertStock(1, NameEntry.Text, qty, UnitEntry.Text);
+                DisplayAlert(NameEntry.Text, qty.ToString() + UnitEntry.ToString(), "OK");
             }
         }
 
