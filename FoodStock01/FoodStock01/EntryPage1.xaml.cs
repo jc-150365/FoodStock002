@@ -70,6 +70,8 @@ namespace FoodStock01
                 DisplayAlert(NameEntry.Text, "あと" + result.ToString() + "日", "OK");
 
                 NameEntry.Text = "";
+
+                FoodPicker.Date = new DateTime(now.Year, now.Month,now.Day);//
             }
             else//保存食品の登録だったら
             {
