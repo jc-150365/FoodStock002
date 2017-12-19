@@ -32,16 +32,16 @@ namespace FoodStock01
         //プラスがクリックされた
         void OnPlus_Clicked(object sender, EventArgs args)
         {
-            string no = ((CustomButton)sender).NoText;
-            string name = ((CustomButton)sender).NameText;
-            int num = Convert.ToInt32(((CustomButton)sender).CountText);
-            string unit = ((CustomButton)sender).UnitText;
+            string no1 = ((CustomButton)sender).NoText;
+            string name1 = ((CustomButton)sender).NameText;
+            int num1 = Convert.ToInt32(((CustomButton)sender).CountText);
+            string unit1 = ((CustomButton)sender).UnitText;
 
             //DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
 
-            int s_no = int.Parse(no);//
+            int s_no1 = int.Parse(no1);//
             /***ここから試し***/
-            StockFoodModel.UpdateStockPlus02(s_no,name,num,unit);
+            StockFoodModel.UpdateStockPlus02(s_no1,name1,num1,unit1);
 
             Title = "保存";
 
@@ -52,9 +52,21 @@ namespace FoodStock01
         //マイナスがクリックされた
         void OnMinus_Clicked(object sender, EventArgs args)
         {
-            int num = Convert.ToInt32(((CustomButtonMinus)sender).CountText) - 1;
-            string name = ((CustomButtonMinus)sender).NameText;
-            DisplayAlert("1引きました", name+"　"+num.ToString(), "ok");
+            string no2 = ((CustomButtonMinus)sender).NoText;
+            string name2 = ((CustomButtonMinus)sender).NameText;
+            int num2 = Convert.ToInt32(((CustomButtonMinus)sender).CountText);
+            string unit2 = ((CustomButtonMinus)sender).UnitText;
+
+            //DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
+
+            int s_no2 = int.Parse(no2);//
+            /***ここから試し***/
+            StockFoodModel.UpdateStockMinus(s_no2, name2, num2, unit2);
+
+            Title = "保存";
+
+            InitializeComponent();
+            /***ここまで試し***/
         }
     }
 }

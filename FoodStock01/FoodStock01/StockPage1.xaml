@@ -80,8 +80,10 @@
                                                               CountText ="{Binding S_num}"
                                                               UnitText="{Binding S_unit}"/>
                                         <toolkit:CustomButtonMinus CheckedChanged = "OnMinus_Clicked"
-                                                                   NameText ="{Binding S_name}"
-                                                                   CountText ="{Binding S_num}"/>
+                                                              NoText="{Binding S_no}"
+                                                              NameText ="{Binding S_name}"
+                                                              CountText ="{Binding S_num}"
+                                                              UnitText="{Binding S_unit}"/>
                                     </StackLayout>
                                                  
                                 </Grid>

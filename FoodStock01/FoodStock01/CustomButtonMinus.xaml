@@ -4,8 +4,10 @@
              x:Class="FoodStock01.CustomButtonMinus">
     <StackLayout Orientation="Horizontal">
         <Label x:Name="buttomImage" Text="-" TextColor="DodgerBlue" FontSize="Large"/>
+        <Label x:Name="textNoLabel" IsVisible="False"/>
         <Label x:Name="textNameLabel" IsVisible="False"/>
         <Label x:Name="textCountLabel" IsVisible="False"/>
+        <Label x:Name="textUnitLabel" IsVisible="False"/>
     </StackLayout>
 
     <ContentView.GestureRecognizers>
