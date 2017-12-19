@@ -23,7 +23,7 @@ namespace FoodStock01
         //更新ボタンが押された時
         private void Update_Button_Clicked(object sender, EventArgs e)
         {
-            Title = "保存";
+            Title = "保存食品リスト";
 
             InitializeComponent();
 
@@ -37,13 +37,11 @@ namespace FoodStock01
             int num1 = Convert.ToInt32(((CustomButton)sender).CountText);
             string unit1 = ((CustomButton)sender).UnitText;
 
-            //DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
-
             int s_no1 = int.Parse(no1);//
             /***ここから試し***/
             StockFoodModel.UpdateStockPlus02(s_no1,name1,num1,unit1);
 
-            Title = "保存";
+            Title = "保存食品リスト";
 
             InitializeComponent();
             /***ここまで試し***/
@@ -56,14 +54,12 @@ namespace FoodStock01
             string name2 = ((CustomButtonMinus)sender).NameText;
             int num2 = Convert.ToInt32(((CustomButtonMinus)sender).CountText);
             string unit2 = ((CustomButtonMinus)sender).UnitText;
-
-            //DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
-
+            
             int s_no2 = int.Parse(no2);//
             /***ここから試し***/
             StockFoodModel.UpdateStockMinus(s_no2, name2, num2, unit2);
 
-            Title = "保存";
+            Title = "保存食品リスト";
 
             InitializeComponent();
             /***ここまで試し***/
