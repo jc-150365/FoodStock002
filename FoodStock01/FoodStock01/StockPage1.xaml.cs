@@ -32,13 +32,16 @@ namespace FoodStock01
         //プラスがクリックされた
         void OnPlus_Clicked(object sender, EventArgs args)
         {
-            int num = Convert.ToInt32(((CustomButton)sender).CountText) + 1;
-            string no = ((CustomButton)sender).NameText;
-            DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
+            string no = ((CustomButton)sender).NoText;
+            string name = ((CustomButton)sender).NameText;
+            int num = Convert.ToInt32(((CustomButton)sender).CountText);
+            string unit = ((CustomButton)sender).UnitText;
+
+            //DisplayAlert("1足しました", no+"　"+num.ToString(), "ok");
 
             int s_no = int.Parse(no);//
             /***ここから試し***/
-            StockFoodModel.UpdateStockPlus(s_no);
+            StockFoodModel.UpdateStockPlus02(s_no,name,num,unit);
 
             Title = "保存";
 

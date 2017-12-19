@@ -112,10 +112,8 @@ namespace FoodStock01
             {
                 try
                 {
-                    int a = s_no;
                     //データベースに指定したSQLを発行
-                    //return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1");
-                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1 WHERE [S_no] = "+ a);
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1 WHERE [S_no] = ");
 
                 }
                 catch (Exception e)
@@ -128,7 +126,7 @@ namespace FoodStock01
         }
 
         /********************アップデートメソッド02（プラス試し）**************************************/
-        /*public static void UpdateStockPlus02(int s_no,int s_num)
+        public static void UpdateStockPlus02(int s_no,string s_name,int s_num,string s_unit)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -138,7 +136,7 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<StockFoodModel>();
 
-                    db.Update(new StockFoodModel() { S_no = s_no,S_num = s_num+1});
+                    db.Update(new StockFoodModel() { S_no = s_no,S_name = s_name,S_num = s_num+1,S_unit = s_unit});
 
                     db.Commit();
                 }
@@ -148,7 +146,7 @@ namespace FoodStock01
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
-        }*/
+        }
 
         /********************アップデートメソッド（マイナス）**************************************/
         public static List<StockFoodModel> UpdateStockMinus(int s_no)
