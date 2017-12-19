@@ -18,7 +18,7 @@ namespace FoodStock01
         {
             //タイトル
             Title = title;
-
+            
             InitializeComponent();
         }
 

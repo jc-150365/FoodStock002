@@ -108,7 +108,7 @@ namespace FoodStock01
             result = s.Days;
         }
 
-        /*************日付関係の試し***********************************/
+        /*************日付関係の試し（たぶん使わない）*********************************************/
         public static int Span(DateTime d)
         {
             TimeSpan t = d - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);

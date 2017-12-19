@@ -110,7 +110,7 @@ namespace FoodStock01
         }
 
         /********************アップデートメソッド（日付）*************************************/
-        public static void UpdateStockPlus(int f_no, string f_name, int f_result,DateTime f_date)
+        public static void UpdateF_date(int f_no, string f_name, int f_result,DateTime f_date)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -120,7 +120,11 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<FoodModel>();
 
-                    db.Update(new FoodModel() { F_no = f_no, F_name = f_name, F_result = f_result });
+                    TimeSpan t = f_date - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day+1);//よくわからん
+
+                    int span = t.Days;
+
+                    db.Update(new FoodModel() { F_no = f_no, F_name = f_name, F_result = span, F_date = f_date });
 
                     db.Commit();
                 }
