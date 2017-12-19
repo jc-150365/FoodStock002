@@ -15,37 +15,16 @@ namespace FoodStock01
 
         public string F_name { get; set; } //食材名
 
+        public int F_result { get; set; } //登録時点での、消費期限までの日数
+
         public DateTime F_date { get; set; } //消費期限
 
         public string F_limit { get; set; } //現在時刻との差（後で使うかも）
 
         public TimeSpan F_span { get; set; } //現在日時との差（後で使うかも）
 
-        public int F_result { get; set; } //現在日時との差（後で使うかも）
-
-        /********************インサートメソッド*********************/
-        /*public static void InsertFood(int f_no, string f_name,DateTime f_date)
-        {
-            //データベースに接続する
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-                try
-                {
-                    //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
-                    db.Insert(new FoodModel() { F_no = f_no, F_name = f_name, F_date = f_date });
-                    db.Commit();
-                }
-                catch (Exception e)
-                {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
-        }*/
-
         /********************インサートメソッド**********************/
-        public static void InsertFood(int f_no, string f_name, int f_result)
+        public static void InsertFood(int f_no, string f_name, int f_result,DateTime f_date)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -55,7 +34,7 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<FoodModel>();
 
-                    db.Insert(new FoodModel() { F_no = f_no, F_name = f_name, F_result = f_result });
+                    db.Insert(new FoodModel() { F_no = f_no, F_name = f_name, F_result = f_result, F_date = f_date });
                     db.Commit();
                 }
                 catch (Exception e)
@@ -130,22 +109,25 @@ namespace FoodStock01
             }
         }
 
-        /********************アップデートメソッド**************************************/
-        public static List<FoodModel> UpdateFood()
+        /********************アップデートメソッド（日付）*************************************/
+        public static void UpdateStockPlus(int f_no, string f_name, int f_result,DateTime f_date)
         {
+            //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
-                    //データベースに指定したSQLを発行
-                    return db.Query<FoodModel>("UPDATE [Food] SET ");
+                    //データベースにFoodテーブルを作成する
+                    db.CreateTable<FoodModel>();
 
+                    db.Update(new FoodModel() { F_no = f_no, F_name = f_name, F_result = f_result });
+
+                    db.Commit();
                 }
                 catch (Exception e)
                 {
-
+                    db.Rollback();
                     System.Diagnostics.Debug.WriteLine(e);
-                    return null;
                 }
             }
         }

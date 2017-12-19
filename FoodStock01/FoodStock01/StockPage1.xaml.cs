@@ -39,7 +39,7 @@ namespace FoodStock01
 
             int s_no1 = int.Parse(no1);//
             /***ここから試し***/
-            StockFoodModel.UpdateStockPlus02(s_no1,name1,num1,unit1);
+            StockFoodModel.UpdateStockPlus(s_no1,name1,num1,unit1);
 
             Title = "保存食品リスト";
 
