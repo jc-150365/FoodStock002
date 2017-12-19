@@ -120,7 +120,8 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<FoodModel>();
 
-                    TimeSpan t = f_date - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day+1);//よくわからん
+                    //TimeSpan t = f_date - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day+1);//よくわからん
+                    TimeSpan t = f_date - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);//よくわからん
 
                     int span = t.Days;
 
