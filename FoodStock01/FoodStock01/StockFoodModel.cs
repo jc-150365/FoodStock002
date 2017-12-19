@@ -106,14 +106,14 @@ namespace FoodStock01
         }
 
         /********************アップデートメソッド（プラス）**************************************/
-        public static List<StockFoodModel> UpdateStockPlus()
+        public static List<StockFoodModel> UpdateStockPlus(int s_no)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1");
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1 WHERE [S_no] = "+ s_no);
 
                 }
                 catch (Exception e)
