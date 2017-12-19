@@ -113,7 +113,7 @@ namespace FoodStock01
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1 WHERE [S_no] = 1");
+                    return db.Query<StockFoodModel>("UPDATE [Stock] SET [S_num] = [S_num] + 1");
 
                 }
                 catch (Exception e)
@@ -135,8 +135,9 @@ namespace FoodStock01
                 {
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<StockFoodModel>();
+                    var x = StockFoodModel.UpdateStockPlus(s_no);
+                    db.Update(x);
                     
-                    db.Delete<StockFoodModel>(s_no);//デリートで渡す値は主キーじゃないといけない説
                     db.Commit();
                 }
                 catch (Exception e)
