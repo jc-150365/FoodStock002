@@ -73,7 +73,7 @@ namespace FoodStock01
 
                     FoodModel.UpdateF_date(food01.F_no, food01.F_name, food01.F_result, food01.F_date);
                     Foods.Add(f01);
-                    FoodModel.UpdateF_date(food01.F_no, food01.F_name, food01.F_result, food01.F_date);
+                    //FoodModel.UpdateF_date(food01.F_no, food01.F_name, food01.F_result, food01.F_date);
                 }
 
                 Foods = new ObservableCollection<Food>();
