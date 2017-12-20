@@ -60,6 +60,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MemoMeodel.cs" />
     <Compile Include="MemoNavi.cs" />
     <Compile Include="MemoPage.cs" />
     <Compile Include="MemoPage1.xaml.cs">
